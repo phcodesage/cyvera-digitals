@@ -111,7 +111,7 @@ export default function WebDevPage() {
                 <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.25" />
               </linearGradient>
             </defs>
-            
+
             {/* Homepage-style wave lines */}
             <path fill="none" stroke="url(#flow1)" strokeWidth="2" opacity="0.6">
               <animate
@@ -125,7 +125,7 @@ export default function WebDevPage() {
                 "
               />
             </path>
-            
+
             <path fill="none" stroke="url(#flow2)" strokeWidth="1.5" opacity="0.5">
               <animate
                 attributeName="d"
@@ -138,7 +138,7 @@ export default function WebDevPage() {
                 "
               />
             </path>
-            
+
             <path fill="none" stroke="url(#flow3)" strokeWidth="1" opacity="0.4">
               <animate
                 attributeName="d"
@@ -151,7 +151,7 @@ export default function WebDevPage() {
                 "
               />
             </path>
-            
+
             {/* Decorative dots attached to lines */}
             <g opacity="0.9">
               {/* Dots on line 1 */}
@@ -165,7 +165,7 @@ export default function WebDevPage() {
                   <mpath href="#dot-path-1" />
                 </animateMotion>
               </circle>
-              
+
               {/* Dots on line 2 */}
               <circle r="8" fill="#f0abfc">
                 <animateMotion dur="30s" repeatCount="indefinite" begin="0s">
@@ -177,7 +177,7 @@ export default function WebDevPage() {
                   <mpath href="#dot-path-2" />
                 </animateMotion>
               </circle>
-              
+
               {/* Dots on line 3 */}
               <circle r="8" fill="#d946ef">
                 <animateMotion dur="35s" repeatCount="indefinite" begin="0s">
@@ -190,25 +190,25 @@ export default function WebDevPage() {
                 </animateMotion>
               </circle>
             </g>
-            
+
             {/* Hidden paths for dot animation */}
             <path id="dot-path-1" d="M0,480 C180,380 360,560 580,460 C760,370 960,540 1180,440 C1340,360 1410,460 1440,440" fill="none" />
             <path id="dot-path-2" d="M0,520 C160,420 360,600 580,490 C760,390 980,570 1180,470 C1340,390 1410,500 1440,480" fill="none" />
             <path id="dot-path-3" d="M0,560 C180,460 380,640 600,530 C800,430 1020,610 1220,500 C1360,420 1420,530 1440,510" fill="none" />
-            
+
             {/* Static decorative dots */}
             <g opacity="0.5">
               <circle cx="300" cy="490" r="4" fill="#e879f9" />
               <circle cx="600" cy="530" r="5" fill="#f0abfc" />
               <circle cx="900" cy="510" r="4" fill="#d946ef" />
               <circle cx="1200" cy="550" r="4" fill="#e879f9" />
-              
+
               <circle cx="450" cy="570" r="4" fill="#f0abfc" />
               <circle cx="750" cy="590" r="5" fill="#d946ef" />
               <circle cx="1050" cy="580" r="4" fill="#e879f9" />
             </g>
           </svg>
-          
+
           {/* Radial glows */}
           <div className="absolute top-0 left-0 w-[600px] h-[400px] bg-gradient-radial from-blue-100/50 via-purple-50/20 to-transparent rounded-full blur-3xl" />
           <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-gradient-radial from-cyan-100/40 via-indigo-50/15 to-transparent rounded-full blur-3xl" />

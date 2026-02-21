@@ -139,7 +139,7 @@ function ServicesHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-subheading mb-10 leading-relaxed max-w-2xl"
-                style={{ color: '#535252' }}
+              style={{ color: '#535252' }}
             >
               We design, build, and manage digital solutions that strengthen your brand, improve user experience, and support long-term growth.
             </motion.p>
@@ -307,11 +307,10 @@ function WebDevSection() {
                   <button
                     key={tech.name}
                     onClick={() => setActiveTech(i)}
-                    className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all ${
-                      activeTech === i
+                    className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all ${activeTech === i
                         ? 'bg-gradient-primary text-white shadow-md'
                         : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
-                    }`}
+                      }`}
                   >
                     {tech.name}
                   </button>
@@ -622,11 +621,10 @@ function SocialMediaSection() {
                   <button
                     key={p.name}
                     onClick={() => setActivePlatform(i)}
-                    className={`flex-1 flex items-center justify-center gap-2 py-4 text-sm font-semibold transition-all ${
-                      activePlatform === i
+                    className={`flex-1 flex items-center justify-center gap-2 py-4 text-sm font-semibold transition-all ${activePlatform === i
                         ? 'text-secondary-purple border-b-2 border-secondary-purple bg-purple-50/40'
                         : 'text-gray-500 hover:text-gray-700'
-                    }`}
+                      }`}
                   >
                     <p.icon size={18} /> {p.name}
                   </button>

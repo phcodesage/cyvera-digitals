@@ -234,7 +234,7 @@ export default function WhyUsPage() {
                 At Cyvera Digitals, we focus on clarity, strategy, and execution to create digital experiences that are purposeful, scalable, and built to perform.
               </motion.p>
             </div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={heroInView ? { opacity: 1, x: 0 } : {}}

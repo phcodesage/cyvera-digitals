@@ -111,7 +111,7 @@ export default function Contact() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {} }
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="max-w-3xl mb-12"
         >
@@ -131,7 +131,7 @@ export default function Contact() {
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {} }
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
@@ -167,7 +167,7 @@ export default function Contact() {
                   type="email"
                   placeholder="Enter your email for updates"
                   className="flex-1 px-4 py-3 rounded-full border-2 bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-secondary-purple text-sm"
-                  style={{ 
+                  style={{
                     backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, #e879f9, #a78bfa, #60a5fa)',
                     backgroundOrigin: 'border-box',
                     backgroundClip: 'padding-box, border-box',
@@ -188,7 +188,7 @@ export default function Contact() {
           {/* Contact Form */}
           <motion.form
             initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {} }
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="card-liquid-glass rounded-3xl p-8 space-y-6"
             onSubmit={(e) => e.preventDefault()}

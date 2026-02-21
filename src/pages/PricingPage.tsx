@@ -186,11 +186,10 @@ export default function PricingPage() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
               whileHover={{ y: -8 }}
-              className={`relative p-8 rounded-2xl transition-all card-liquid-glass ${
-                plan.highlighted
+              className={`relative p-8 rounded-2xl transition-all card-liquid-glass ${plan.highlighted
                   ? 'scale-[1.02] ring-2 ring-purple-200/50'
                   : ''
-              }`}
+                }`}
             >
               {plan.highlighted && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -226,11 +225,10 @@ export default function PricingPage() {
 
               <Link
                 to="/contact"
-                className={`w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm transition-all no-underline ${
-                  plan.highlighted
+                className={`w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm transition-all no-underline ${plan.highlighted
                     ? 'text-white hover:shadow-xl hover:-translate-y-0.5'
                     : 'border-2 border-gray-200 text-gray-700 hover:border-purple-300 hover:text-purple-700'
-                }`}
+                  }`}
                 style={plan.highlighted ? { background: 'var(--gradient-primary)', boxShadow: '0 4px 20px rgba(123, 25, 231, 0.35)' } : {}}
               >
                 {plan.price === "Custom" ? "Contact Us" : "Get Started"}

@@ -61,68 +61,55 @@ export default function AboutPage() {
         ref={heroRef}
         className="relative pt-12 pb-32 overflow-hidden"
       >
-        {/* Animated wave background */}
-        <div className="absolute inset-0 w-full h-full">
-          <svg
-            className="absolute bottom-0 left-0 w-full"
-            viewBox="0 0 1440 500"
-            preserveAspectRatio="xMidYMid slice"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ minHeight: '100%' }}
-          >
-            <defs>
-              <linearGradient id="abt4" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#e879f9" stopOpacity="0.55" />
-                <stop offset="50%" stopColor="#a78bfa" stopOpacity="0.45" />
-                <stop offset="100%" stopColor="#93c5fd" stopOpacity="0.5" />
-              </linearGradient>
-              <linearGradient id="abt5" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#f0abfc" stopOpacity="0.4" />
-                <stop offset="50%" stopColor="#c4b5fd" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#bfdbfe" stopOpacity="0.45" />
-              </linearGradient>
-              <linearGradient id="abt6" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#d946ef" stopOpacity="0.25" />
-                <stop offset="60%" stopColor="#818cf8" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#60a5fa" stopOpacity="0.3" />
-              </linearGradient>
-              <filter id="abtblur2">
-                <feGaussianBlur stdDeviation="8" />
-              </filter>
-            </defs>
-            <path filter="url(#abtblur2)" fill="url(#abt6)" opacity="0.7">
-              <animate attributeName="d" dur="9s" repeatCount="indefinite"
-                values="M0,260 C200,160 400,340 600,240 C800,140 1000,300 1200,220 C1350,160 1420,260 1440,240 L1440,500 L0,500 Z;
-                        M0,290 C180,200 380,360 620,260 C820,170 1020,320 1240,240 C1370,180 1420,270 1440,255 L1440,500 L0,500 Z;
-                        M0,260 C200,160 400,340 600,240 C800,140 1000,300 1200,220 C1350,160 1420,260 1440,240 L1440,500 L0,500 Z" />
-            </path>
-            <path fill="url(#abt5)" opacity="0.85">
-              <animate attributeName="d" dur="7s" repeatCount="indefinite"
-                values="M0,310 C160,220 360,380 580,280 C760,190 980,350 1180,260 C1340,190 1411,290 1440,270 L1440,500 L0,500 Z;
-                        M0,280 C200,190 380,400 600,290 C800,200 1000,370 1220,270 C1360,210 1420,300 1440,280 L1440,500 L0,500 Z;
-                        M0,310 C160,220 360,380 580,280 C760,190 980,350 1180,260 C1340,190 1410,290 1440,270 L1440,500 L0,500 Z" />
-            </path>
-            <path fill="url(#abt4)" opacity="0.9">
-              <animate attributeName="d" dur="5.5s" repeatCount="indefinite"
-                values="M0,350 C180,260 360,420 580,330 C760,250 960,400 1180,310 C1340,240 1410,330 1440,315 L1440,500 L0,500 Z;
-                        M0,330 C200,245 380,440 600,345 C800,260 980,420 1200,325 C1360,260 1420,340 1440,325 L1440,500 L0,500 Z;
-                        M0,350 C180,260 360,420 580,330 C760,250 960,400 1180,310 C1340,240 1410,330 1440,315 L1440,500 L0,500 Z" />
-            </path>
-            <path fill="none" stroke="#e879f9" strokeWidth="1.2" opacity="0.35">
-              <animate attributeName="d" dur="6s" repeatCount="indefinite"
-                values="M0,370 C200,295 400,420 620,350 C820,275 1020,410 1240,330 C1370,275 1420,350 1440,335;
-                        M0,355 C220,278 420,440 640,360 C840,285 1040,430 1260,340 C1380,285 1420,360 1440,345;
-                        M0,370 C200,295 400,420 620,350 C820,275 1020,410 1240,330 C1370,275 1420,350 1440,335" />
-            </path>
-            <path fill="none" stroke="#a78bfa" strokeWidth="1" opacity="0.3">
-              <animate attributeName="d" dur="8s" repeatCount="indefinite"
-                values="M0,385 C180,315 380,440 600,368 C800,295 1000,428 1220,348 C1360,295 1420,368 1440,355;
-                        M0,372 C200,302 400,458 620,375 C820,308 1020,445 1240,360 C1370,308 1420,375 1440,362;
-                        M0,385 C180,315 380,440 600,368 C800,295 1000,428 1220,348 C1360,295 1420,368 1440,355" />
-            </path>
-          </svg>
+        {/* Lightweight CSS wave background */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          {/* Static gradient blobs */}
           <div className="absolute top-0 left-0 w-[600px] h-[350px] bg-gradient-radial from-fuchsia-100/60 via-purple-50/30 to-transparent rounded-full blur-3xl" />
           <div className="absolute top-0 right-0 w-[500px] h-[300px] bg-gradient-radial from-blue-100/50 via-indigo-50/20 to-transparent rounded-full blur-3xl" />
+
+          {/* CSS-only waves — GPU-composited via transform, no layout thrashing */}
+          <div
+            className="absolute bottom-0 left-0 w-[200%] h-[220px] opacity-70"
+            style={{
+              background: 'linear-gradient(90deg, #d946ef40, #818cf833, #60a5fa4d, #d946ef40)',
+              borderRadius: '45% 55% 50% 50% / 60% 40% 60% 40%',
+              willChange: 'transform',
+              animation: 'aboutWave1 12s ease-in-out infinite',
+            }}
+          />
+          <div
+            className="absolute bottom-0 left-0 w-[200%] h-[180px] opacity-80"
+            style={{
+              background: 'linear-gradient(90deg, #f0abfc66, #c4b5fd5a, #bfdbfe73, #f0abfc66)',
+              borderRadius: '50% 50% 45% 55% / 55% 45% 55% 45%',
+              willChange: 'transform',
+              animation: 'aboutWave2 10s ease-in-out infinite',
+            }}
+          />
+          <div
+            className="absolute bottom-0 left-0 w-[200%] h-[140px] opacity-90"
+            style={{
+              background: 'linear-gradient(90deg, #e879f98c, #a78bfa73, #93c5fd80, #e879f98c)',
+              borderRadius: '55% 45% 50% 50% / 50% 50% 50% 50%',
+              willChange: 'transform',
+              animation: 'aboutWave3 8s ease-in-out infinite',
+            }}
+          />
+
+          <style>{`
+            @keyframes aboutWave1 {
+              0%, 100% { transform: translateX(0) translateY(0); }
+              50% { transform: translateX(-15%) translateY(-8px); }
+            }
+            @keyframes aboutWave2 {
+              0%, 100% { transform: translateX(0) translateY(0); }
+              50% { transform: translateX(-10%) translateY(6px); }
+            }
+            @keyframes aboutWave3 {
+              0%, 100% { transform: translateX(0) translateY(0); }
+              50% { transform: translateX(-12%) translateY(-4px); }
+            }
+          `}</style>
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -148,7 +135,7 @@ export default function AboutPage() {
                 Cyvera Digitals is a digital agency focused on helping businesses build a strong and effective online presence. We specialize in web design, website development, and digital solutions that are visually engaging, strategically built, and aligned with real business goals.
               </motion.p>
             </div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={heroInView ? { opacity: 1, x: 0 } : {}}
